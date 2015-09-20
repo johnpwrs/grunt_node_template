@@ -15,7 +15,7 @@ app.set('config', CONFIGS);
 app.set('env', process.env.APPLICATION_ENV);
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(validator());
 app.use(cookieParser());
 
