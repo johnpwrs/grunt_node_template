@@ -1,13 +1,13 @@
 var express = require('express');
 var session = require('express-session');
-var path = require('path');
+var validator = require('express-validator');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var _ = require('lodash');
-var validator = require('express-validator');
 
 var globals = require('./globals');
-var CONFIGS = require('../config').getConfig(process.env.APPLICATION_ENV || 'development');
+var CONFIGS = require('../config')
+  .getConfig(process.env.APPLICATION_ENV || 'development');
 
 var app = express();
 
