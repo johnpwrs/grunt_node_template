@@ -4,6 +4,7 @@ var validator = require('express-validator');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var _ = require('lodash');
+var logger = require('winston');
 
 var globals = require('./globals');
 var CONFIGS = require('../config')
@@ -18,6 +19,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(validator());
 app.use(cookieParser());
+
+//logger.add(logger.transports.File, { filename: __base + '../logs/app.log' });
 
 //setup session handling
 app.use(session({
